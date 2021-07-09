@@ -45,7 +45,7 @@ void uart_newline(){
 
 char uart_receive_char(){
 	while (!(UCSRA & (1 << RXC)));    // looping to check if data is ready to receive the character 
-	return UDR;
+	return (char)UDR;
 }
 void uart_receive_str(char* data){
 	for(int i=0 ; data[i]!='\0' ; i++){     // looping to check if data is ready to receive the string 
